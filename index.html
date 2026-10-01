@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,620;1,9..144,500&family=Outfit:wght@300;400;500;600&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=20261002a">
+  <link rel="stylesheet" href="css/site.css?v=20261002b">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -82,7 +82,7 @@
         </div>
         <div class="pane-bottom">
           <h2>Yang bisa dimasuki.</h2>
-          <p>Saya membangun permainan — dari horor folklore Jawa sampai labirin yang mengajarkan sesuatu. Tiga prototipe bisa dimainkan langsung di browser.</p>
+          <p>Saya membangun permainan — dari horor folklore Jawa sampai labirin yang mengajarkan sesuatu. Delapan demo mini bisa dimainkan langsung di browser.</p>
           <button type="button" class="btn" data-enter="game">Masuk ke dunia permainan</button>
         </div>
       </div>
@@ -107,8 +107,8 @@
       </div>
 
       <div class="portrait">
-        <img class="portrait-rest" src="img/muhamad-yusuf.webp?v=20261002a" width="616" height="876" alt="Potret Muhamad Yusuf, S.Kom" decoding="async">
-        <img class="portrait-point" src="img/muhamad-yusuf-menunjuk.webp?v=20261002a" width="616" height="876" alt="" aria-hidden="true" decoding="async">
+        <img class="portrait-rest" src="img/muhamad-yusuf.webp?v=20261002b" width="616" height="876" alt="Potret Muhamad Yusuf, S.Kom" decoding="async">
+        <img class="portrait-point" src="img/muhamad-yusuf-menunjuk.webp?v=20261002b" width="616" height="876" alt="" aria-hidden="true" decoding="async">
       </div>
     </section>
 
@@ -117,46 +117,101 @@
         <header class="hero-game">
           <p class="eyebrow"><span>Gime Muyufar</span> Dunia permainan</p>
           <h1>Dunia yang bisa dimainkan, bukan hanya ditautkan.</h1>
-          <p class="lede">Muhamad Yusuf, S.Kom membuat permainan dari konsep sampai build yang bisa dipegang orang lain. Di bawah ini ada tiga prototipe web — ruang bermain di situs ini — lalu arsip karya lengkapnya.</p>
+          <p class="lede">Muhamad Yusuf, S.Kom membuat permainan dari konsep sampai build yang bisa dipegang orang lain. Delapan judul, delapan demo mini yang berjalan langsung di browser ini, lengkap dengan tangkapan layar build aslinya.</p>
         </header>
 
         <section class="arcade" aria-labelledby="arcade-title">
           <div class="section-head">
             <p class="eyebrow">01 — Arcade</p>
             <h2 id="arcade-title">Mainkan sekarang</h2>
-            <p>Prototipe ini dibuat untuk situs ini. Build lengkapnya ada di arsip tiap karya.</p>
+            <p>Tiap judul punya demo mininya sendiri di sini — konsep yang sama, dipadatkan menjadi satu layar. Build lengkapnya ada di arsip tiap karya.</p>
           </div>
           <div class="cabinets">
             <article class="cabinet">
-              <button type="button" data-game="tuyul">
-                <span class="art art-tuyul" aria-hidden="true"></span>
+              <button type="button" data-game="monusa">
+                <img class="art" src="img/games/monusa-monas.webp?v=20261002b" width="1024" height="1024" alt="" aria-hidden="true" loading="lazy" decoding="async">
                 <span class="cabinet-copy">
-                  <span class="cabinet-kicker">Endless · lompat</span>
-                  <span class="cabinet-title">Lari Tuyul</span>
-                  <span class="cabinet-text">Malam, arwah kecil, dan rintangan yang tidak mau minggir.</span>
-                  <span class="cabinet-best" data-best="tuyul">Belum ada catatan</span>
+                  <span class="cabinet-kicker">AR · pindai</span>
+                  <span class="cabinet-title">Monusa AR</span>
+                  <span class="cabinet-text">Tahan bingkai di atas penanda sampai monumennya berdiri.</span>
+                  <span class="cabinet-best" data-best="monusa">Belum ada catatan</span>
                 </span>
               </button>
             </article>
             <article class="cabinet">
-              <button type="button" data-game="maze">
-                <span class="art art-maze" aria-hidden="true"></span>
+              <button type="button" data-game="sipesia">
+                <img class="art" src="img/games/sipesia-lambung.webp?v=20261002b" width="1024" height="472" alt="" aria-hidden="true" loading="lazy" decoding="async">
                 <span class="cabinet-copy">
-                  <span class="cabinet-kicker">Labirin · edukasi</span>
-                  <span class="cabinet-title">Labirin H₂O</span>
-                  <span class="cabinet-text">Cari dua hidrogen dan satu oksigen, lalu temukan pintu keluar.</span>
-                  <span class="cabinet-best" data-best="maze">Belum ada catatan</span>
+                  <span class="cabinet-kicker">Edukasi · tembak</span>
+                  <span class="cabinet-title">Sipesia 3D</span>
+                  <span class="cabinet-text">Bersihkan kuman di rongga mulut, gigi, dan lambung.</span>
+                  <span class="cabinet-best" data-best="sipesia">Belum ada catatan</span>
+                </span>
+              </button>
+            </article>
+            <article class="cabinet">
+              <button type="button" data-game="jarwo">
+                <img class="art" src="img/games/jarwo-main.webp?v=20261002b" width="337" height="567" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <span class="cabinet-copy">
+                  <span class="cabinet-kicker">Arcade · satu tombol</span>
+                  <span class="cabinet-title">Rocket Captain Jarwo</span>
+                  <span class="cabinet-text">Jet pack menyala selama ditekan. Roket tidak menyingkir.</span>
+                  <span class="cabinet-best" data-best="jarwo">Belum ada catatan</span>
                 </span>
               </button>
             </article>
             <article class="cabinet">
               <button type="button" data-game="offroad">
-                <span class="art art-road" aria-hidden="true"></span>
+                <img class="art" src="img/games/offroad-ungu.webp?v=20261002b" width="850" height="479" alt="" aria-hidden="true" loading="lazy" decoding="async">
                 <span class="cabinet-copy">
-                  <span class="cabinet-kicker">Malam · kemudi</span>
-                  <span class="cabinet-title">Jalur Gelap</span>
-                  <span class="cabinet-text">Lampu depan sempit. Jalan berbelok. Batu tidak memantul.</span>
+                  <span class="cabinet-kicker">Balap · siluet</span>
+                  <span class="cabinet-title">Dark Offroad</span>
+                  <span class="cabinet-text">Gas, rem, dan jaga badan tetap rata saat mendarat.</span>
                   <span class="cabinet-best" data-best="offroad">Belum ada catatan</span>
+                </span>
+              </button>
+            </article>
+            <article class="cabinet">
+              <button type="button" data-game="kimia">
+                <img class="art" src="img/games/kimia-labirin.webp?v=20261002b" width="576" height="1024" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <span class="cabinet-copy">
+                  <span class="cabinet-kicker">Edukasi · labirin</span>
+                  <span class="cabinet-title">Labirin Kimia</span>
+                  <span class="cabinet-text">Kumpulkan unsurnya, lalu jawab satu soal di depan pintu.</span>
+                  <span class="cabinet-best" data-best="kimia">Belum ada catatan</span>
+                </span>
+              </button>
+            </article>
+            <article class="cabinet">
+              <button type="button" data-game="ninja">
+                <img class="art" src="img/games/ninja-judul.webp?v=20261002b" width="480" height="854" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <span class="cabinet-copy">
+                  <span class="cabinet-kicker">Arcade · satu tombol</span>
+                  <span class="cabinet-title">Ninja Spring</span>
+                  <span class="cabinet-text">Memantul di antara duri yang datang bergantian.</span>
+                  <span class="cabinet-best" data-best="ninja">Belum ada catatan</span>
+                </span>
+              </button>
+            </article>
+            <article class="cabinet">
+              <button type="button" data-game="tuyul2d">
+                <img class="art" src="img/games/tuyul2d-gua.webp?v=20261002b" width="1024" height="576" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <span class="cabinet-copy">
+                  <span class="cabinet-kicker">Petualangan · 2D</span>
+                  <span class="cabinet-title">Tuyul The Adventure 2D</span>
+                  <span class="cabinet-text">Lari di gua dunia gaib. Tiga nyawa, koin, dan gir berputar.</span>
+                  <span class="cabinet-best" data-best="tuyul2d">Belum ada catatan</span>
+                </span>
+              </button>
+            </article>
+            <article class="cabinet">
+              <button type="button" data-game="tuyul3d">
+                <img class="art" src="img/games/tuyul3d-kamar.webp?v=20261002b" width="1024" height="574" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <span class="cabinet-copy">
+                  <span class="cabinet-kicker">Horor · rumah hantu</span>
+                  <span class="cabinet-title">Tuyul The Adventure 3D</span>
+                  <span class="cabinet-text">Cahaya sependek beberapa langkah. Ambil keris, lalu keluar.</span>
+                  <span class="cabinet-best" data-best="tuyul3d">Belum ada catatan</span>
                 </span>
               </button>
             </article>
@@ -167,122 +222,170 @@
           <div class="section-head">
             <p class="eyebrow">02 — Karya</p>
             <h2 id="works-title">Yang sudah dibangun</h2>
-            <p>Daftar ini mengikuti arsip di <a href="https://linktr.ee/muyufar" target="_blank" rel="noopener noreferrer">linktr.ee/muyufar</a>. Beberapa hidup di itch.io, yang lain di folder rilis.</p>
+            <p>Delapan judul, dengan tangkapan layar dari build aslinya. Arsipnya mengikuti <a href="https://linktr.ee/muyufar" target="_blank" rel="noopener noreferrer">linktr.ee/muyufar</a> — beberapa hidup di itch.io, yang lain di folder rilis.</p>
           </div>
 
           <div class="work-list">
             <article class="work">
               <span class="work-idx">01</span>
               <div class="work-main">
-                <h3>INDOPUSTAKA Kids</h3>
-                <p>Platform edukasi anak yang tercantum di portofolio publik.</p>
+                <h3>Monusa AR</h3>
+                <p>Monusa, kependekan dari Monumen Nusantara. Aplikasi augmented reality untuk anak 7–15 tahun yang mengenalkan landmark kota besar Indonesia: Tugu Jogja, Tugu Surabaya, dan Monas. Pengguna memindai gambar penanda, lalu objek 3D-nya berdiri di atas gambar itu, ditemani karakter animasi anak supaya betah dipakai.</p>
+                <ul class="shots">
+                  <li><button type="button" class="shot" data-shot="img/games/monusa-monas.webp?v=20261002b"><img src="img/games/monusa-monas.webp?v=20261002b" width="1024" height="1024" alt="Penanda Monusa untuk Jakarta, bergambar Monas" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/monusa-jogja.webp?v=20261002b"><img src="img/games/monusa-jogja.webp?v=20261002b" width="1024" height="1024" alt="Penanda Monusa untuk Yogyakarta, bergambar Tugu Pal Putih" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/monusa-surabaya.webp?v=20261002b"><img src="img/games/monusa-surabaya.webp?v=20261002b" width="1024" height="1024" alt="Penanda Monusa untuk Surabaya, bergambar hiu dan buaya" loading="lazy" decoding="async"></button></li>
+                </ul>
               </div>
-              <p class="work-kind">Edukasi</p>
+              <p class="work-kind">AR · Edukasi</p>
               <div class="work-actions">
-                <a class="btn btn-ghost" href="https://kids.indopustakaplus.com/" target="_blank" rel="noopener noreferrer">Buka situs</a>
+                <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1mWY6cM5BfZ49c1vayV0Girir32cCQIw4?usp=share_link" target="_blank" rel="noopener noreferrer">Arsip</a>
+                <button type="button" class="btn btn-solid" data-game="monusa">Demo mini</button>
               </div>
             </article>
 
             <article class="work">
               <span class="work-idx">02</span>
               <div class="work-main">
-                <h3>Tuyul The Adventure 3D</h3>
-                <p>Petualangan horor third-person. Seorang tuyul menembus rintangan folklore Jawa — gendruwo, pocong, kuntilanak — untuk mencapai dukun yang mengorbankan orang tuanya. Unity, Android. Skripsi Universitas AMIKOM Yogyakarta, 2021.</p>
+                <h3>Sipesia 3D</h3>
+                <p>RPG 3D untuk anak SMP yang sedang belajar pengenalan organ manusia. Pemain berpetualang di dalam tubuh, menembak kuman yang berkeliaran, dan tiap ruang menjelaskan bagian yang sedang dilewati — dari rongga mulut, gigi yang berkaries, sampai lambung yang penuh asam klorida.</p>
+                <ul class="shots">
+                  <li><button type="button" class="shot" data-shot="img/games/sipesia-menu.webp?v=20261002b"><img src="img/games/sipesia-menu.webp?v=20261002b" width="1024" height="472" alt="Layar mulai Sipesia 3D dengan latar jaringan tubuh berwarna ungu" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/sipesia-tekak.webp?v=20261002b"><img src="img/games/sipesia-tekak.webp?v=20261002b" width="1024" height="472" alt="Ruang tekak berwarna merah dengan penjelasan bolus yang masuk ke faring" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/sipesia-gigi.webp?v=20261002b"><img src="img/games/sipesia-gigi.webp?v=20261002b" width="1024" height="472" alt="Gigi berkaries bercahaya kuning dengan lubang kunci di tengahnya" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/sipesia-lambung.webp?v=20261002b"><img src="img/games/sipesia-lambung.webp?v=20261002b" width="1024" height="472" alt="Ruang lambung berwarna hijau dengan kuman dan penjelasan asam klorida" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/sipesia-equipment.webp?v=20261002b"><img src="img/games/sipesia-equipment.webp?v=20261002b" width="1024" height="472" alt="Layar perlengkapan Sipesia dengan karakter dan dua senjata" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/sipesia-senjata.webp?v=20261002b"><img src="img/games/sipesia-senjata.webp?v=20261002b" width="992" height="575" alt="Model 3D pistol sinar bergaya laboratorium" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/sipesia-model-depan.webp?v=20261002b"><img src="img/games/sipesia-model-depan.webp?v=20261002b" width="582" height="593" alt="Model karakter Sipesia tampak depan" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/sipesia-model-belakang.webp?v=20261002b"><img src="img/games/sipesia-model-belakang.webp?v=20261002b" width="542" height="567" alt="Model karakter Sipesia tampak belakang" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/sipesia-model-kanan.webp?v=20261002b"><img src="img/games/sipesia-model-kanan.webp?v=20261002b" width="480" height="571" alt="Model karakter Sipesia tampak samping kanan" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/sipesia-model-kiri.webp?v=20261002b"><img src="img/games/sipesia-model-kiri.webp?v=20261002b" width="439" height="582" alt="Model karakter Sipesia tampak samping kiri" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/sipesia-model-atas.webp?v=20261002b"><img src="img/games/sipesia-model-atas.webp?v=20261002b" width="494" height="323" alt="Model karakter Sipesia tampak atas" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/sipesia-model-bawah.webp?v=20261002b"><img src="img/games/sipesia-model-bawah.webp?v=20261002b" width="451" height="261" alt="Model karakter Sipesia tampak bawah" loading="lazy" decoding="async"></button></li>
+                </ul>
               </div>
-              <p class="work-kind">Horor · 3D</p>
+              <p class="work-kind">Edukasi · 3D RPG</p>
               <div class="work-actions">
-                <a class="btn btn-ghost" href="https://muyufar.itch.io/tuyul-the-adventure-3d" target="_blank" rel="noopener noreferrer">itch.io</a>
-                <a class="btn btn-ghost" href="https://eprints.amikom.ac.id/id/eprint/1973/" target="_blank" rel="noopener noreferrer">Skripsi</a>
-                <button type="button" class="btn btn-solid" data-game="tuyul">Prototipe</button>
+                <a class="btn btn-ghost" href="https://muyufar.itch.io/sipesia" target="_blank" rel="noopener noreferrer">itch.io</a>
+                <button type="button" class="btn btn-solid" data-game="sipesia">Demo mini</button>
               </div>
             </article>
 
             <article class="work">
               <span class="work-idx">03</span>
               <div class="work-main">
-                <h3>Sipesia 3D</h3>
-                <p>Petualangan edukasi tentang sistem pencernaan manusia. Belajar dengan cara berjalan di dalamnya.</p>
+                <h3>Rocket Captain Jarwo</h3>
+                <p>Tap dash dengan karakter Jarwo dan jet pack di punggungnya. Konsepnya seperti flappy bird: dilepas ia jatuh, ditekan ia naik, dan roket terus berdatangan dari depan.</p>
+                <ul class="shots">
+                  <li><button type="button" class="shot" data-shot="img/games/jarwo-judul.webp?v=20261002b"><img src="img/games/jarwo-judul.webp?v=20261002b" width="340" height="567" alt="Layar judul Rocket Captain Jarwo dengan pita merah dan langit biru" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/jarwo-main.webp?v=20261002b"><img src="img/games/jarwo-main.webp?v=20261002b" width="337" height="567" alt="Jarwo terbang dengan jet pack melewati roket dan penanda jarak" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/jarwo-ulang.webp?v=20261002b"><img src="img/games/jarwo-ulang.webp?v=20261002b" width="341" height="569" alt="Layar Try Again dengan tombol rumah dan tombol ulang" loading="lazy" decoding="async"></button></li>
+                </ul>
               </div>
-              <p class="work-kind">Edukasi · 3D</p>
+              <p class="work-kind">Arcade · Tap</p>
               <div class="work-actions">
-                <a class="btn btn-ghost" href="https://muyufar.itch.io/sipesia" target="_blank" rel="noopener noreferrer">itch.io</a>
+                <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1JyYiZrZu4If-sadFeehLZJvY1q8BSBmi?usp=share_link" target="_blank" rel="noopener noreferrer">Arsip</a>
+                <button type="button" class="btn btn-solid" data-game="jarwo">Demo mini</button>
               </div>
             </article>
 
             <article class="work">
               <span class="work-idx">04</span>
               <div class="work-main">
-                <h3>Tuyul The Adventure 2D</h3>
-                <p>Perjalanan tuyul yang sama, dipotong menjadi bidang dua dimensi.</p>
+                <h3>Dark Offroad</h3>
+                <p>Offroad dua dimensi bersiluet hitam di atas latar kota yang berganti warna. Mobilnya menyusuri bukit yang tidak pernah rata, dan makin jauh jaraknya makin banyak poinnya.</p>
+                <ul class="shots">
+                  <li><button type="button" class="shot" data-shot="img/games/offroad-ungu.webp?v=20261002b"><img src="img/games/offroad-ungu.webp?v=20261002b" width="850" height="479" alt="Dark Offroad dengan latar ungu dan siluet mobil polisi di antara menara kota" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/offroad-hijau.webp?v=20261002b"><img src="img/games/offroad-hijau.webp?v=20261002b" width="850" height="479" alt="Dark Offroad dengan latar hijau dan koin emas di atas bukit" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/offroad-biru.webp?v=20261002b"><img src="img/games/offroad-biru.webp?v=20261002b" width="850" height="479" alt="Dark Offroad dengan latar biru dan siluet tugu di belakang mobil" loading="lazy" decoding="async"></button></li>
+                </ul>
               </div>
-              <p class="work-kind">Petualangan · 2D</p>
+              <p class="work-kind">Balap · 2D</p>
               <div class="work-actions">
-                <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1VLuHPhyXC-2DC2GPHZxR1UfFGe4Fl1EJ?usp=share_link" target="_blank" rel="noopener noreferrer">Arsip</a>
+                <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1vS2n7XajKvvmmOSSG3H1d7jbBi1qT88D?usp=share_link" target="_blank" rel="noopener noreferrer">Arsip</a>
+                <button type="button" class="btn btn-solid" data-game="offroad">Demo mini</button>
               </div>
             </article>
 
             <article class="work">
               <span class="work-idx">05</span>
               <div class="work-main">
-                <h3>Ninja Spring</h3>
-                <p>Permainan aksi.</p>
+                <h3>Labirin Kimia</h3>
+                <p>Dibuat untuk mengenalkan unsur-unsur kimia dan manfaatnya. Ada labirin berisi unsur yang harus dikumpulkan, ada kuis tabel periodik yang selalu memberi petunjuk sebelum soalnya dibaca.</p>
+                <ul class="shots">
+                  <li><button type="button" class="shot" data-shot="img/games/kimia-judul.webp?v=20261002b"><img src="img/games/kimia-judul.webp?v=20261002b" width="576" height="1024" alt="Layar judul Chemistry Labyrinth dengan tombol Mulai, Quiz, dan Tabel Periodik" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/kimia-level.webp?v=20261002b"><img src="img/games/kimia-level.webp?v=20261002b" width="576" height="1024" alt="Pemilihan level mudah dengan delapan nomor, sebagian masih terkunci" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/kimia-labirin.webp?v=20261002b"><img src="img/games/kimia-labirin.webp?v=20261002b" width="576" height="1024" alt="Labirin berisi unsur Be, C, Mg, Mn, dan Ca yang harus dikumpulkan" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/kimia-kuis.webp?v=20261002b"><img src="img/games/kimia-kuis.webp?v=20261002b" width="576" height="1024" alt="Soal kuis tentang jari-jari atom lengkap dengan kotak petunjuk" loading="lazy" decoding="async"></button></li>
+                </ul>
               </div>
-              <p class="work-kind">Aksi</p>
+              <p class="work-kind">Edukasi · Labirin</p>
               <div class="work-actions">
-                <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1Gc2GwYl75WnDfegMDo8rMDKbQQURPDHP?usp=share_link" target="_blank" rel="noopener noreferrer">Arsip</a>
+                <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1f_u-j3rkvTc28oxy8EQRL1WReSmdiVOQ?usp=share_link" target="_blank" rel="noopener noreferrer">Arsip</a>
+                <button type="button" class="btn btn-solid" data-game="kimia">Demo mini</button>
               </div>
             </article>
 
             <article class="work">
               <span class="work-idx">06</span>
               <div class="work-main">
-                <h3>Monusa AR</h3>
-                <p>Karya augmented reality.</p>
+                <h3>Ninja Spring</h3>
+                <p>Satu tombol lagi, konsepnya sama seperti flappy bird, tetapi ninjanya memantul di antara duri yang datang bergantian dari atas dan bawah. Sempat terbit di Google Play.</p>
+                <ul class="shots">
+                  <li><button type="button" class="shot" data-shot="img/games/ninja-judul.webp?v=20261002b"><img src="img/games/ninja-judul.webp?v=20261002b" width="480" height="854" alt="Layar judul Ninja Spring dengan tombol main berwarna merah" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/ninja-main.webp?v=20261002b"><img src="img/games/ninja-main.webp?v=20261002b" width="480" height="854" alt="Ninja memantul di antara duri oranye sambil mengumpulkan koin" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/ninja-pilih.webp?v=20261002b"><img src="img/games/ninja-pilih.webp?v=20261002b" width="480" height="854" alt="Layar pemilihan ninja bernama Wakijo seharga 250 koin" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/ninja-playstore.webp?v=20261002b"><img src="img/games/ninja-playstore.webp?v=20261002b" width="576" height="1024" alt="Halaman Google Play Ninja Spring dengan rating 3,8" loading="lazy" decoding="async"></button></li>
+                </ul>
               </div>
-              <p class="work-kind">AR</p>
+              <p class="work-kind">Arcade · Tap</p>
               <div class="work-actions">
-                <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1mWY6cM5BfZ49c1vayV0Girir32cCQIw4?usp=share_link" target="_blank" rel="noopener noreferrer">Arsip</a>
+                <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1Gc2GwYl75WnDfegMDo8rMDKbQQURPDHP?usp=share_link" target="_blank" rel="noopener noreferrer">Arsip</a>
+                <button type="button" class="btn btn-solid" data-game="ninja">Demo mini</button>
               </div>
             </article>
 
             <article class="work">
               <span class="work-idx">07</span>
               <div class="work-main">
-                <h3>Dark Offroad</h3>
-                <p>Mengemudi di jalur yang hampir tidak kelihatan. Prototipe web-nya ada di arcade, bernama Jalur Gelap.</p>
+                <h3>Tuyul The Adventure 2D</h3>
+                <p>Permainan petualangan dengan Tuyul sebagai karakter utama, menjelajahi dunia gaib. Untuk keluar dari sana ia menemui banyak rintangan dan halangan yang tidak habis-habis.</p>
+                <ul class="shots">
+                  <li><button type="button" class="shot" data-shot="img/games/tuyul2d-gua.webp?v=20261002b"><img src="img/games/tuyul2d-gua.webp?v=20261002b" width="1024" height="576" alt="Tuyul bercahaya berdiri di peti kayu di dalam gua bergir" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/tuyul2d-tebing.webp?v=20261002b"><img src="img/games/tuyul2d-tebing.webp?v=20261002b" width="1024" height="576" alt="Tuyul di tepi tebing berlumut dengan roda gir besar dan koin" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/tuyul2d-zombi.webp?v=20261002b"><img src="img/games/tuyul2d-zombi.webp?v=20261002b" width="1024" height="576" alt="Tuyul melewati dua mayat tergantung sambil menghindari shuriken" loading="lazy" decoding="async"></button></li>
+                </ul>
               </div>
-              <p class="work-kind">Balap</p>
+              <p class="work-kind">Petualangan · 2D</p>
               <div class="work-actions">
-                <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1vS2n7XajKvvmmOSSG3H1d7jbBi1qT88D?usp=share_link" target="_blank" rel="noopener noreferrer">Arsip</a>
-                <button type="button" class="btn btn-solid" data-game="offroad">Prototipe</button>
+                <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1VLuHPhyXC-2DC2GPHZxR1UfFGe4Fl1EJ?usp=share_link" target="_blank" rel="noopener noreferrer">Arsip</a>
+                <button type="button" class="btn btn-solid" data-game="tuyul2d">Demo mini</button>
               </div>
             </article>
 
             <article class="work">
               <span class="work-idx">08</span>
               <div class="work-main">
-                <h3>Labirin Kimia</h3>
-                <p>Labirin bertema kimia. Di browser, versinya menyusut menjadi pencarian H₂O.</p>
+                <h3>Tuyul The Adventure 3D</h3>
+                <p>Naik kelas dari versi dua dimensinya, dan dunianya pindah ke rumah hantu. Tuyul yang sebelumnya menjadi budak seorang dukun ingin keluar dan bebas, supaya tidak menjadi tuyul lagi. Unity, Android. Skripsi Universitas AMIKOM Yogyakarta, 2021.</p>
+                <ul class="shots">
+                  <li><button type="button" class="shot" data-shot="img/games/tuyul3d-judul.webp?v=20261002b"><img src="img/games/tuyul3d-judul.webp?v=20261002b" width="1024" height="509" alt="Menu utama Tuyul The Adventure 3D dengan sosok hantu berpipi merah" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/tuyul3d-kamar.webp?v=20261002b"><img src="img/games/tuyul3d-kamar.webp?v=20261002b" width="1024" height="574" alt="Tuyul berdiri di kamar tua bercahaya biru dengan ranjang besi" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/tuyul3d-menu.webp?v=20261002b"><img src="img/games/tuyul3d-menu.webp?v=20261002b" width="1024" height="578" alt="Menu dalam permainan dengan pilihan Senjata dan Barang" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/tuyul3d-senjata.webp?v=20261002b"><img src="img/games/tuyul3d-senjata.webp?v=20261002b" width="1024" height="573" alt="Panel senjata berisi keris dengan rincian damage dan stamina" loading="lazy" decoding="async"></button></li>
+                  <li><button type="button" class="shot" data-shot="img/games/tuyul3d-suara.webp?v=20261002b"><img src="img/games/tuyul3d-suara.webp?v=20261002b" width="1024" height="454" alt="Layar pengaturan suara dengan tulisan merah bergaya horor" loading="lazy" decoding="async"></button></li>
+                </ul>
               </div>
-              <p class="work-kind">Edukasi</p>
+              <p class="work-kind">Horor · 3D</p>
               <div class="work-actions">
-                <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1f_u-j3rkvTc28oxy8EQRL1WReSmdiVOQ?usp=share_link" target="_blank" rel="noopener noreferrer">Arsip</a>
-                <button type="button" class="btn btn-solid" data-game="maze">Prototipe</button>
-              </div>
-            </article>
-
-            <article class="work">
-              <span class="work-idx">09</span>
-              <div class="work-main">
-                <h3>Rocket Captain Jarwo</h3>
-                <p>Permainan arcade.</p>
-              </div>
-              <p class="work-kind">Arcade</p>
-              <div class="work-actions">
-                <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1JyYiZrZu4If-sadFeehLZJvY1q8BSBmi?usp=share_link" target="_blank" rel="noopener noreferrer">Arsip</a>
+                <a class="btn btn-ghost" href="https://muyufar.itch.io/tuyul-the-adventure-3d" target="_blank" rel="noopener noreferrer">itch.io</a>
+                <a class="btn btn-ghost" href="https://eprints.amikom.ac.id/id/eprint/1973/" target="_blank" rel="noopener noreferrer">Skripsi</a>
+                <button type="button" class="btn btn-solid" data-game="tuyul3d">Demo mini</button>
               </div>
             </article>
           </div>
+
+          <p class="work-note">Di luar delapan judul di atas ada <a href="https://kids.indopustakaplus.com/" target="_blank" rel="noopener noreferrer">INDOPUSTAKA Kids</a>, platform edukasi anak — bukan permainan, tetapi masih satu arsip.</p>
         </section>
 
         <aside class="bridge bridge-to-system">
@@ -419,7 +522,7 @@
       <h2 id="stage-title">Permainan</h2>
       <button type="button" class="btn btn-ghost" id="stage-close">Tutup</button>
     </div>
-    <canvas id="stage-canvas" width="960" height="540">Browser ini tidak menggambar canvas.</canvas>
+    <canvas id="stage-canvas" width="960" height="540" tabindex="-1">Browser ini tidak menggambar canvas.</canvas>
     <div class="stage-bottom">
       <div id="stage-ui"></div>
       <div class="pad" aria-label="Kendali sentuh">
@@ -432,10 +535,15 @@
     </div>
   </dialog>
 
+  <dialog id="shot" aria-label="Tangkapan layar">
+    <img id="shot-img" src="" alt="">
+    <button type="button" class="btn btn-ghost" id="shot-close">Tutup</button>
+  </dialog>
+
   <noscript>
     <p class="noscript">Situs ini membutuhkan JavaScript untuk berpindah dunia dan memainkan prototipe.</p>
   </noscript>
 
-  <script type="module" src="js/main.js?v=20261002a"></script>
+  <script type="module" src="js/main.js?v=20261002b"></script>
 </body>
 </html>

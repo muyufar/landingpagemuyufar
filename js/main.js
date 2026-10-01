@@ -1,12 +1,14 @@
 // Versi di URL harus sama dengan yang di index.html: query pada <script> tidak
 // menurun ke modul yang di-import, jadi arcade.js perlu nomornya sendiri.
-import { initArcade } from "./arcade.js?v=20261002a";
+import { initArcade } from "./arcade.js?v=20261002b";
 
 const arcade = initArcade();
 const threshold = document.querySelector(".threshold");
 const gamePane = document.querySelector(".pane-game");
 const systemPane = document.querySelector(".pane-system");
 const veil = document.querySelector(".veil");
+const shotDialog = document.getElementById("shot");
+const shotImage = document.getElementById("shot-img");
 const theme = document.querySelector('meta[name="theme-color"]');
 const mobileQuery = window.matchMedia("(max-width: 860px)");
 const reduceQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -110,8 +112,23 @@ document.body.addEventListener("click", (event) => {
     });
     return;
   }
+  const shot = event.target.closest("[data-shot]");
+  if (shot) {
+    const img = shot.querySelector("img");
+    shotImage.src = shot.dataset.shot;
+    shotImage.alt = img ? img.alt : "";
+    if (!shotDialog.open) shotDialog.showModal();
+    return;
+  }
   const game = event.target.closest("[data-game]");
   if (game && document.body.dataset.world === "game") arcade.open(game.dataset.game);
+});
+
+// Gambarnya dilepas saat ditutup supaya tangkapan lama tidak berkedip muncul
+// sepersekian detik ketika dialognya dibuka lagi untuk gambar yang lain.
+shotDialog.addEventListener("close", () => { shotImage.removeAttribute("src"); });
+shotDialog.addEventListener("click", (event) => {
+  if (event.target === shotDialog || event.target.id === "shot-close") shotDialog.close();
 });
 
 window.addEventListener("popstate", () => applyWorld(worldFromHash()));

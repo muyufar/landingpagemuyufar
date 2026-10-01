@@ -516,7 +516,7 @@ body[data-world="system"] .world-system {
 
 .cabinets {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(236px, 1fr));
   gap: 16px;
 }
 
@@ -541,78 +541,19 @@ body[data-world="system"] .world-system {
   border-color: rgba(231, 195, 106, 0.7);
 }
 
+/* Tangkapan layar aslinya punya rasio yang berbeda-beda — potret dari ponsel,
+   lanskap dari tablet — jadi kotaknya yang menentukan bentuk, bukan gambarnya. */
 .art {
   display: block;
-  height: 180px;
+  width: 100%;
+  /* Atribut width/height di <img> ada untuk menahan pergeseran tata letak, tetapi
+     atribut height itu juga mengunci tinggi elemen dan membuat aspect-ratio di
+     bawah ini diabaikan. height: auto melepas kuncinya. */
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
   border-radius: 14px;
-  position: relative;
-  overflow: hidden;
-}
-
-.art-tuyul {
-  background:
-    radial-gradient(circle at 42% 46%, #fff 0 4px, transparent 5px),
-    radial-gradient(circle at 58% 46%, #fff 0 4px, transparent 5px),
-    radial-gradient(circle at 50% 62%, #2a1633 0 42px, transparent 44px),
-    radial-gradient(ellipse at 50% 100%, rgba(255, 77, 109, 0.45), transparent 55%),
-    linear-gradient(#1a1024, #07060c);
-}
-
-.art-tuyul::before {
-  content: "";
-  position: absolute;
-  left: 18%;
-  right: 18%;
-  bottom: 18px;
-  height: 70px;
-  background: radial-gradient(ellipse at 50% 0, #3a2348, transparent 70%);
-  border-radius: 40px 40px 16px 16px;
-}
-
-.art-maze {
-  background:
-    repeating-linear-gradient(90deg, transparent 0 18px, rgba(142, 246, 234, 0.35) 18px 20px),
-    repeating-linear-gradient(0deg, transparent 0 18px, rgba(142, 246, 234, 0.35) 18px 20px),
-    #071614;
-}
-
-.art-maze::after {
-  content: "H₂O";
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-family: Syne, sans-serif;
-  font-size: 2.4rem;
-  color: var(--spirit);
-}
-
-.art-road {
-  background:
-    linear-gradient(#07060f, #1b1430 42%, #14110e 42%);
-}
-
-.art-road::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 70%;
-  height: 58%;
-  transform: translateX(-50%);
-  background: linear-gradient(#3a342c, #1a1612);
-  clip-path: polygon(38% 0, 62% 0, 100% 100%, 0 100%);
-}
-
-.art-road::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 18%;
-  width: 90px;
-  height: 90px;
-  transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(255, 214, 140, 0.9), transparent 68%);
+  background: #07060c;
 }
 
 .cabinet-copy { display: grid; gap: 4px; padding: 4px 8px 10px; }
@@ -620,6 +561,50 @@ body[data-world="system"] .world-system {
 .cabinet-title { font-family: Syne, sans-serif; font-size: 1.55rem; font-weight: 700; letter-spacing: -0.04em; }
 .cabinet-text { color: rgba(244, 239, 232, 0.72); font-size: 0.95rem; }
 .cabinet-best { margin-top: 6px; font-variant-numeric: tabular-nums; color: var(--spirit); font-size: 0.88rem; }
+
+/* Deretan tangkapan layar digeser ke samping: tingginya disamakan dan lebarnya
+   dibiarkan mengikuti rasio asli, supaya potret dan lanskap bisa berjajar. */
+.shots {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  padding-bottom: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+}
+
+.shots li { scroll-snap-align: start; flex: 0 0 auto; }
+
+.shot {
+  display: block;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  background: #07060c;
+  cursor: zoom-in;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.shot:hover, .shot:focus-visible { border-color: var(--gold); }
+
+.shot img {
+  display: block;
+  height: 132px;
+  width: auto;
+  max-width: 320px;
+  object-fit: contain;
+}
+
+.work-note {
+  margin-top: 18px;
+  color: rgba(244, 239, 232, 0.6);
+  font-size: 0.92rem;
+}
+
+.work-note a { color: var(--gold); }
 
 .work-list { border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
 
@@ -963,6 +948,21 @@ dialog {
 
 dialog::backdrop { background: rgba(0, 0, 0, 0.72); }
 
+/* Kedua dialog adalah anak langsung body, di luar pembungkus .world-*, jadi
+   aturan tombol per dunia tidak menjangkaunya dan tombolnya kembali ke gaya
+   bawaan peramban: kotak abu-abu terang di atas panel gelap. */
+dialog .btn-ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.28);
+  color: var(--mist);
+  border-radius: 999px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.92rem;
+}
+
+dialog .btn-ghost:hover,
+dialog .btn-ghost:focus-visible { border-color: var(--gold); color: var(--gold); }
+
 .stage-top, .stage-bottom {
   display: flex;
   justify-content: space-between;
@@ -985,6 +985,10 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.72); }
   background: #05040a;
   touch-action: none;
 }
+
+/* Kanvas difokuskan lewat skrip agar spasi masuk ke permainan; cincin fokusnya
+   tidak perlu terlihat karena bukan pengguna yang mengarahkannya ke sini. */
+#stage-canvas:focus { outline: none; }
 
 .stage-bottom { align-items: flex-end; }
 #stage-ui { display: grid; gap: 8px; max-width: 62ch; }
@@ -1011,16 +1015,52 @@ dialog::backdrop { background: rgba(0, 0, 0, 0.72); }
   cursor: pointer;
 }
 
-dialog[data-game="tuyul"] .pad [data-hold="jump"],
-dialog[data-game="maze"] .pad [data-hold="left"],
-dialog[data-game="maze"] .pad [data-hold="right"],
-dialog[data-game="maze"] .pad [data-hold="up"],
-dialog[data-game="maze"] .pad [data-hold="down"],
+/* Tiap permainan hanya memunculkan tombol yang benar-benar dipakainya. */
+dialog[data-game="jarwo"] .pad [data-hold="jump"],
+dialog[data-game="ninja"] .pad [data-hold="jump"],
+dialog[data-game="tuyul2d"] .pad [data-hold="jump"],
+dialog[data-game="sipesia"] .pad [data-hold="jump"],
+dialog[data-game="sipesia"] .pad [data-hold="up"],
+dialog[data-game="sipesia"] .pad [data-hold="down"],
 dialog[data-game="offroad"] .pad [data-hold="left"],
-dialog[data-game="offroad"] .pad [data-hold="right"] {
+dialog[data-game="offroad"] .pad [data-hold="right"],
+dialog[data-game="kimia"] .pad [data-hold="jump"],
+dialog[data-game="kimia"] .pad [data-hold="left"],
+dialog[data-game="kimia"] .pad [data-hold="right"],
+dialog[data-game="kimia"] .pad [data-hold="up"],
+dialog[data-game="kimia"] .pad [data-hold="down"],
+dialog[data-game="monusa"] .pad [data-hold="left"],
+dialog[data-game="monusa"] .pad [data-hold="right"],
+dialog[data-game="monusa"] .pad [data-hold="up"],
+dialog[data-game="monusa"] .pad [data-hold="down"],
+dialog[data-game="tuyul3d"] .pad [data-hold="left"],
+dialog[data-game="tuyul3d"] .pad [data-hold="right"],
+dialog[data-game="tuyul3d"] .pad [data-hold="up"],
+dialog[data-game="tuyul3d"] .pad [data-hold="down"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+#shot {
+  width: fit-content;
+  max-width: calc(100vw - 24px);
+  background: #0b0910;
+  padding: 12px;
+  display: none;
+  gap: 10px;
+  justify-items: end;
+}
+
+#shot[open] { display: grid; }
+
+#shot img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 110px);
+  width: auto;
+  height: auto;
+  border-radius: 8px;
 }
 
 .noscript {
@@ -1030,7 +1070,9 @@ dialog[data-game="offroad"] .pad [data-hold="right"] {
 }
 
 @media (max-width: 980px) {
-  .cabinets, .principle-list, .term-body { grid-template-columns: 1fr; }
+  /* .cabinets tidak ikut dipaksa satu kolom: auto-fit sudah menurunkan
+     jumlahnya sendiri, dan delapan kabinet selebar layar terlalu panjang. */
+  .principle-list, .term-body { grid-template-columns: 1fr; }
   .spine-list { grid-template-columns: 1fr 1fr; }
   .cart-pane { border-left: 0; border-top: 1px solid var(--paper-deep); }
   .work { grid-template-columns: 2.4rem minmax(0, 1fr); }
@@ -1101,6 +1143,7 @@ dialog[data-game="offroad"] .pad [data-hold="right"] {
   .pane-system .pane-top { justify-content: flex-start; }
   .pane-system .pane-bottom { margin-left: 0; }
   .marquee { top: 72px; }
+  .shot img { height: 108px; max-width: 70vw; }
   .spine { padding: 18px; }
   .spine-list { grid-template-columns: 1fr; }
   .top-links { display: none; }
