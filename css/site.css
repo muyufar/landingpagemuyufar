@@ -275,10 +275,13 @@ body[data-world="system"] .topbar button[aria-current="page"] {
 
 /* Potret berdiri di garis pemisah dan ikut bergeser bersama --split, tetapi
    dikurung di koridor antara kedua blok teks: saat panel di-hover garisnya
-   melesat sampai 69% dan potretnya akan menabrak paragraf di seberang. */
+   melesat sampai 69% dan potretnya akan menabrak paragraf di seberang.
+   Koridor itu melebar sendiri di layar besar, sehingga potret ikut melesat
+   jauh ke garis batas. Geserannya dipatok 0.4 lebar potret agar langkahnya
+   terasa sama di layar mana pun; 18px di belakangnya tetap jadi batas keras. */
 .portrait {
   --pw: min(26vh, calc(100vw - 864px));
-  --travel: max(0px, calc(50vw - 408px - var(--pw) / 2 - 18px));
+  --travel: max(0px, min(calc(var(--pw) * 0.4), calc(50vw - 408px - var(--pw) / 2 - 18px)));
   position: absolute;
   z-index: 3;
   bottom: 0;
