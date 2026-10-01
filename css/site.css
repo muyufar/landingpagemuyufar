@@ -639,6 +639,8 @@ body[data-world="system"] .world-system {
 .hero-system h1,
 .world-system .section-head h2,
 .world-system .bridge h2,
+.world-system .work h3,
+.spine-lead,
 .principle-list h3 {
   font-family: Fraunces, Georgia, serif;
   font-weight: 560;
@@ -656,6 +658,59 @@ body[data-world="system"] .world-system {
 .world-system .lede,
 .world-system .section-head p { color: rgba(26, 23, 20, 0.78); }
 .world-system .eyebrow { color: var(--copper); letter-spacing: 0.14em; }
+.world-system .section-head a { color: var(--copper); }
+
+.world-system .work-list { border-bottom-color: #cfc3b2; }
+.world-system .work { border-top-color: #cfc3b2; }
+.world-system .work-idx { color: var(--copper); }
+.world-system .work-main p,
+.world-system .work-kind { color: rgba(26, 23, 20, 0.74); }
+
+.world-system .btn-ghost,
+.world-system .btn-solid {
+  border-radius: 2px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.world-system .btn-ghost {
+  background: transparent;
+  border-color: #b5a791;
+  color: var(--ink);
+}
+
+.world-system .btn-ghost:hover { border-color: var(--ink); background: #e3d9c8; }
+.world-system .btn-solid { background: var(--ink); color: var(--paper); }
+
+.spine {
+  margin-top: 34px;
+  padding: 24px;
+  background: #f3ece1;
+  border: 1px solid #d9cfc0;
+}
+
+.spine-lead { font-size: 1.45rem; margin-bottom: 18px; }
+
+.spine-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.spine-list li {
+  display: grid;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 2px solid var(--copper);
+  font-size: 0.95rem;
+}
+
+.spine-list strong { letter-spacing: -0.01em; }
+.spine-list span { color: rgba(26, 23, 20, 0.74); }
 
 .principle-list {
   list-style: none;
@@ -673,6 +728,8 @@ body[data-world="system"] .world-system {
 
 .principle-list h3 { font-size: 1.7rem; margin-bottom: 8px; }
 .principle-list p { margin: 0; color: rgba(26, 23, 20, 0.78); }
+
+.terminal-section { scroll-margin-top: 76px; }
 
 .terminal {
   background: #221e1a;
@@ -929,6 +986,7 @@ dialog[data-game="offroad"] .pad [data-hold="right"] {
 
 @media (max-width: 980px) {
   .cabinets, .principle-list, .term-body { grid-template-columns: 1fr; }
+  .spine-list { grid-template-columns: 1fr 1fr; }
   .cart-pane { border-left: 0; border-top: 1px solid var(--paper-deep); }
   .work { grid-template-columns: 2.4rem minmax(0, 1fr); }
   .work-kind, .work-actions { grid-column: 2; justify-content: flex-start; }
@@ -975,6 +1033,8 @@ dialog[data-game="offroad"] .pad [data-hold="right"] {
   .pane-system .pane-top { justify-content: flex-start; }
   .pane-system .pane-bottom { margin-left: 0; }
   .marquee { top: 72px; }
+  .spine { padding: 18px; }
+  .spine-list { grid-template-columns: 1fr; }
   .top-links { display: none; }
   .topbar { gap: 0; }
   body[data-world="game"] .topbar,

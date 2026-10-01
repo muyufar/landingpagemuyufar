@@ -100,6 +100,14 @@ document.body.addEventListener("click", (event) => {
     go(enter.dataset.enter, true);
     return;
   }
+  const scroll = event.target.closest("[data-scroll]");
+  if (scroll) {
+    document.getElementById(scroll.dataset.scroll)?.scrollIntoView({
+      behavior: reduceQuery.matches ? "auto" : "smooth",
+      block: "start"
+    });
+    return;
+  }
   const game = event.target.closest("[data-game]");
   if (game && document.body.dataset.world === "game") arcade.open(game.dataset.game);
 });
