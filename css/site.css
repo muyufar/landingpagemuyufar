@@ -270,7 +270,36 @@ body[data-world="system"] .topbar button[aria-current="page"] {
 .pane-system .pane-top { justify-content: flex-end; }
 .pane-system .pane-bottom { margin-left: auto; }
 
-.pane-bottom { max-width: 420px; }
+/* Dipersempit dari 420px agar potret punya koridor di tengah. */
+.pane-bottom { max-width: 360px; }
+
+/* Potret berdiri di garis pemisah dan ikut bergeser bersama --split, tetapi
+   dikurung di koridor antara kedua blok teks: saat panel di-hover garisnya
+   melesat sampai 69% dan potretnya akan menabrak paragraf di seberang. */
+.portrait {
+  --pw: min(21vh, calc(100vw - 864px));
+  --travel: max(0px, calc(50vw - 408px - var(--pw) / 2 - 18px));
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  left: clamp(calc(50% - var(--travel)), var(--split), calc(50% + var(--travel)));
+  transform: translateX(-50%);
+  width: var(--pw);
+  pointer-events: none;
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Jas hitam nyaris lenyap di paruh gelap, jadi siluetnya diberi tepi tipis. */
+  filter: drop-shadow(0 0 2px rgba(244, 239, 232, 0.5)) drop-shadow(0 16px 28px rgba(7, 6, 12, 0.3));
+}
+
+/* Koridor tengah terlalu sempit untuk potret pada laptop kecil. */
+@media (min-width: 861px) and (max-width: 979px) {
+  .portrait { display: none; }
+}
 
 .pane h2 {
   font-family: Syne, sans-serif;
@@ -995,7 +1024,7 @@ dialog[data-game="offroad"] .pad [data-hold="right"] {
 @media (max-width: 860px) {
   .threshold {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto auto auto;
   }
   .threshold:has(.pane-game:hover),
   .threshold:has(.pane-system:hover) { grid-template-columns: 1fr; }
@@ -1023,13 +1052,29 @@ dialog[data-game="offroad"] .pad [data-hold="right"] {
     -webkit-text-fill-color: var(--mist);
   }
   .identity-links { flex-wrap: wrap; row-gap: 8px; width: 100%; }
+  .portrait {
+    position: static;
+    grid-row: 2;
+    width: 100%;
+    transform: none;
+    background: #100e16;
+  }
+  .portrait img {
+    width: min(58vw, 215px);
+    margin-inline: auto;
+    filter: none;
+    /* Di layar lebar potretnya habis di lipatan halaman; di sini ia berhenti
+       di tengah kolom, jadi dadanya dilebur ke latar alih-alih dipotong. */
+    -webkit-mask-image: linear-gradient(#000 74%, transparent);
+    mask-image: linear-gradient(#000 74%, transparent);
+  }
   body[data-world="threshold"] .brand span { display: none; }
   body[data-world="threshold"] .topbar { width: calc(100% - 16px); }
   .world-nav button { padding: 8px 8px; font-size: 0.84rem; }
   .identity-links a { color: var(--gold); }
   .pane { min-height: 70vh; padding: 28px 22px 32px; }
-  .pane-game { grid-row: 2; }
-  .pane-system { grid-row: 3; text-align: left; }
+  .pane-game { grid-row: 3; }
+  .pane-system { grid-row: 4; text-align: left; }
   .pane-system .pane-top { justify-content: flex-start; }
   .pane-system .pane-bottom { margin-left: 0; }
   .marquee { top: 72px; }

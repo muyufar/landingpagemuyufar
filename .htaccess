@@ -2,7 +2,7 @@
 # sebenarnya dibuang-cache lewat URL baru. Batas sehari di bawah hanya jaring
 # pengaman kalau nomor versinya lupa dinaikkan saat deploy.
 <IfModule mod_headers.c>
-  <FilesMatch "\.(css|js|svg|woff2?)$">
+  <FilesMatch "\.(css|js|svg|webp|png|jpe?g|ico|woff2?)$">
     Header set Cache-Control "public, max-age=86400, must-revalidate"
   </FilesMatch>
 
