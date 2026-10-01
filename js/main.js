@@ -1,6 +1,6 @@
 // Versi di URL harus sama dengan yang di index.html: query pada <script> tidak
 // menurun ke modul yang di-import, jadi arcade.js perlu nomornya sendiri.
-import { initArcade } from "./arcade.js?v=20261001";
+import { initArcade } from "./arcade.js?v=20261001b";
 
 const arcade = initArcade();
 const threshold = document.querySelector(".threshold");

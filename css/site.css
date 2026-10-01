@@ -277,7 +277,7 @@ body[data-world="system"] .topbar button[aria-current="page"] {
    dikurung di koridor antara kedua blok teks: saat panel di-hover garisnya
    melesat sampai 69% dan potretnya akan menabrak paragraf di seberang. */
 .portrait {
-  --pw: min(21vh, calc(100vw - 864px));
+  --pw: min(26vh, calc(100vw - 864px));
   --travel: max(0px, calc(50vw - 408px - var(--pw) / 2 - 18px));
   position: absolute;
   z-index: 3;
@@ -285,19 +285,32 @@ body[data-world="system"] .topbar button[aria-current="page"] {
   left: clamp(calc(50% - var(--travel)), var(--split), calc(50% + var(--travel)));
   transform: translateX(-50%);
   width: var(--pw);
+  aspect-ratio: 616 / 876;
   pointer-events: none;
 }
 
+/* Kedua pose ditumpuk pada kotak yang sama; keduanya dirender di atas kanvas
+   yang simetris terhadap kepala, jadi pergantian dan pencerminan tidak
+   menggeser wajah sedikit pun. */
 .portrait img {
-  display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
   /* Jas hitam nyaris lenyap di paruh gelap, jadi siluetnya diberi tepi tipis. */
   filter: drop-shadow(0 0 2px rgba(244, 239, 232, 0.5)) drop-shadow(0 16px 28px rgba(7, 6, 12, 0.3));
+  transition: opacity 0.2s ease;
 }
 
+/* Saat satu panel disorot, ia berganti pose dan menunjuk ke panel tersebut. */
+.portrait-point { opacity: 0; }
+.threshold:has(.pane:hover) .portrait-rest { opacity: 0; }
+.threshold:has(.pane:hover) .portrait-point { opacity: 1; }
+.threshold:has(.pane-game:hover) .portrait-point { transform: scaleX(-1); }
+
 /* Koridor tengah terlalu sempit untuk potret pada laptop kecil. */
-@media (min-width: 861px) and (max-width: 979px) {
+@media (min-width: 861px) and (max-width: 1099px) {
   .portrait { display: none; }
 }
 
@@ -1056,11 +1069,18 @@ dialog[data-game="offroad"] .pad [data-hold="right"] {
     position: static;
     grid-row: 2;
     width: 100%;
+    aspect-ratio: auto;
     transform: none;
     background: #100e16;
   }
+  /* Tanpa kursor tidak ada yang bisa disorot, jadi pose menunjuk tak dipakai. */
+  .portrait-point { display: none; }
   .portrait img {
-    width: min(58vw, 215px);
+    position: static;
+    /* block, bukan inline: margin auto tidak memusatkan elemen inline. */
+    display: block;
+    width: min(58vw, 250px);
+    height: auto;
     margin-inline: auto;
     filter: none;
     /* Di layar lebar potretnya habis di lipatan halaman; di sini ia berhenti
