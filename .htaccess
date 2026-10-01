@@ -1,0 +1,13 @@
+# Aset dipanggil dengan nomor versi di URL (css/site.css?v=...), jadi perubahan
+# sebenarnya dibuang-cache lewat URL baru. Batas sehari di bawah hanya jaring
+# pengaman kalau nomor versinya lupa dinaikkan saat deploy.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|svg|woff2?)$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+  </FilesMatch>
+
+  # HTML memuat nomor versi itu, jadi ia tidak boleh ikut mengendap di cache.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
