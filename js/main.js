@@ -120,7 +120,11 @@ document.body.addEventListener("click", (event) => {
     if (!shotDialog.open) shotDialog.showModal();
     return;
   }
-  const game = event.target.closest("[data-game]");
+  /* Dibatasi pada tombol: elemen <dialog id="stage"> juga memakai data-game untuk
+     aturan CSS tombol pad, jadi tanpa batas ini setiap klik di dalam panggung —
+     termasuk Tutup dan tombol pad — ikut memanggil arcade.open() dan permainannya
+     langsung terbuka ulang sesaat setelah ditutup. */
+  const game = event.target.closest("button[data-game]");
   if (game && document.body.dataset.world === "game") arcade.open(game.dataset.game);
 });
 
